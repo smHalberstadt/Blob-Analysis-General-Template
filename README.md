@@ -2,6 +2,7 @@
 __NOTE: This is tailored for "The Atomic Nature of Matter" as a general case, but I do not do the mathematics. This is just a reference for future blob detection code for Java.__
 This general use blob detection Java project outlines a strategy for one type of pattern detection using pictures.
 For testing I am using Princeton's Project : https://www.cs.princeton.edu/courses/archive/spr15/cos126/assignments/atomic.html
+I am also Using Eclipse 2020-09 to run this code
 - - - -
 ## Image Analysis
 Image analysis in this case is identifying circular/oval groups of pixels.
@@ -26,19 +27,3 @@ Blob, Blob_Finder,Image_Processor, Blob_Tracker
  - (12/16/20)-(12/17/20)
 worked on:
 Blob_Tracker, blob_main
-
-### File finder example code
-```
-file_locations = new String[10][200]; // C:\Users\*\eclipse-workspace\Blob_Detection\images (for those who need the formula of the path)
-		String file_string = "Blob_Detection\\images";
-		for (int file_number = 0; file_number < 10; file_number++) { // sorts by file
-			file_string = file_string + "\\run_" + (file_number + 1);
-			for (int file = 0; file < 200; file++) { // gets each image location
-				file_string = file_string + "\\frame" + String.format("%05d", file) + ".jpg";
-				file_locations[file_number][file] = file_string;
-				file_string = "Blob_Detection\\images\\run_"
-						+ (file_number + 1);
-			}
-			file_string = "Blob_Detection\\images";
-		} // array created with all correct locations
-```
