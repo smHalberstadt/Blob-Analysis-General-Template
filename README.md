@@ -1,2 +1,44 @@
-# Blob-Analysis-General-Template
-Tailored for "The Atomic Nature of Matter" as a general case, but I do not do the mathematics. *This is just a reference for future blob detection code for Java*
+# Blob-Analysis-General-Template (Java)
+__NOTE: This is tailored for "The Atomic Nature of Matter" as a general case, but I do not do the mathematics. This is just a reference for future blob detection code for Java.__
+This general use blob detection Java project outlines a strategy for one type of pattern detection using pictures.
+For testing I am using Princeton's Project : https://www.cs.princeton.edu/courses/archive/spr15/cos126/assignments/atomic.html
+- - - -
+## Image Analysis
+Image analysis in this case is identifying circular/oval groups of pixels.
+This algorithm should be somewhat inefficient for blobs over something like 
+100 pixels, but since I do not expect for this specific program.
+Essentially, it branches out and touches every pixel until it either;
+1. hits the boundaries of the picture
+2. does not hit a pixel that could be used for a blob
+I don't go down since the blobs are circular/oval shaped and make it slightly
+more efficient. For other projects this would need to be changed.
+- - - -
+### Version Notes (mm/dd/yy)
+ - (12/13/20) V1
+started project, made outline code for:
+Blob, Blob_Finder
+ - (12/14/20)
+made outline code for:
+Image_Processor, Blob_Tracker
+ - (12/15/20)
+worked on:
+Blob, Blob_Finder,Image_Processor, Blob_Tracker
+ - (12/16/20)-(12/17/20)
+worked on:
+Blob_Tracker, blob_main
+
+### File finder example code
+```
+file_locations = new String[10][200]; // C:\Users\*\eclipse-workspace\Blob_Detection\images (for those who need the formula of the path)
+		String file_string = "Blob_Detection\\images";
+		for (int file_number = 0; file_number < 10; file_number++) { // sorts by file
+			file_string = file_string + "\\run_" + (file_number + 1);
+			for (int file = 0; file < 200; file++) { // gets each image location
+				file_string = file_string + "\\frame" + String.format("%05d", file) + ".jpg";
+				file_locations[file_number][file] = file_string;
+				file_string = "Blob_Detection\\images\\run_"
+						+ (file_number + 1);
+			}
+			file_string = "Blob_Detection\\images";
+		} // array created with all correct locations
+```
