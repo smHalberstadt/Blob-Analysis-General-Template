@@ -1,3 +1,5 @@
+/* @Author: smHalberstadt
+ */
 package v1_Blob_Detection_G;
 
 import java.util.ArrayList;
